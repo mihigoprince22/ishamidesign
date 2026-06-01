@@ -1,0 +1,187 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-white: #FFFFFF;
+  --color-offwhite: #FAF8F5;
+  --color-beige: #F5F0EB;
+  --color-beige-mid: #E8DDD0;
+  --color-beige-warm: #D4B896;
+  --color-forest: #1A3C34;
+  --color-forest-mid: #2D5A4E;
+  --color-forest-light: #3A7D6B;
+  --color-black: #000000;
+  --color-text: #1A1A1A;
+  --color-muted: #777777;
+  --color-border: rgba(0, 0, 0, 0.1);
+
+  --font-display: 'Poppins', 'Helvetica', 'Arial', sans-serif;
+  --font-body: 'Poppins', 'Helvetica', 'Arial', sans-serif;
+}
+
+/* ── Base Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scrollbar-width: none;
+}
+html::-webkit-scrollbar { display: none; }
+
+body {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-white);
+}
+
+/* ── BiA Typography System (with Poppins) ── */
+.text-display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  line-height: 0.92;
+  font-size: clamp(2.5rem, 7vw, 7rem);
+}
+
+.text-display-sm {
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  font-size: clamp(1.75rem, 4vw, 3.5rem);
+}
+
+.text-label {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(9px, 0.7vw, 12px);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+}
+
+.text-label-lg {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(11px, 0.85vw, 14px);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+}
+
+.text-body {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: clamp(15px, 1.1vw, 18px);
+  line-height: 1.7;
+  letter-spacing: 0;
+}
+
+.text-body-lg {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: clamp(17px, 1.4vw, 24px);
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+}
+
+/* ── BiA Signature Easing ── */
+:root {
+  --ease-bia: cubic-bezier(0.45, 0.02, 0.09, 0.98);
+  --ease-smooth: cubic-bezier(0.19, 1, 0.22, 1);
+  --duration-base: 0.65s;
+  --duration-fast: 0.35s;
+  --duration-slow: 1s;
+}
+
+/* ── Mix Blend Mode ── */
+.blend-exclusion {
+  mix-blend-mode: exclusion;
+  color: var(--color-white);
+}
+
+/* ── Pill Button (Forest Green variant) ── */
+.btn-pill {
+  display: inline-block;
+  position: relative;
+  padding: 0.9em 2em;
+  text-align: center;
+  min-width: 140px;
+  border: 1.5px solid currentColor;
+  border-radius: 0;
+  background: transparent;
+  color: inherit;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(11px, 0.85vw, 13px);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color var(--duration-fast) var(--ease-bia),
+              color var(--duration-fast) var(--ease-bia),
+              border-color var(--duration-fast) var(--ease-bia);
+  text-decoration: none;
+}
+.btn-pill-dark {
+  color: var(--color-forest);
+  border-color: var(--color-forest);
+}
+.btn-pill-dark:hover {
+  background-color: var(--color-forest);
+  color: var(--color-white);
+}
+.btn-pill-light {
+  color: var(--color-white);
+  border-color: var(--color-white);
+}
+.btn-pill-light:hover {
+  background-color: var(--color-white);
+  color: var(--color-forest);
+}
+.btn-pill-filled {
+  background-color: var(--color-forest);
+  color: var(--color-white);
+  border-color: var(--color-forest);
+}
+.btn-pill-filled:hover {
+  background-color: var(--color-forest-mid);
+  border-color: var(--color-forest-mid);
+}
+
+/* ── Image Hover Scale ── */
+.img-hover-container {
+  overflow: hidden;
+  position: relative;
+}
+.img-hover-container img {
+  transition: transform var(--duration-slow) var(--ease-bia);
+  will-change: transform;
+}
+.img-hover-container:hover img {
+  transform: scale(1.04);
+}
+
+/* ── Keyframes ── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Selection ── */
+::selection {
+  background-color: var(--color-forest);
+  color: var(--color-white);
+}
+
+/* ── Links ── */
+a { color: inherit; text-decoration: none; }
+
+/* ── Responsive image ── */
+img { display: block; max-width: 100%; height: auto; }
