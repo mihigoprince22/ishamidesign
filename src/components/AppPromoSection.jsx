@@ -59,6 +59,7 @@ export default function AppPromoSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1] }}
+            style={{ textAlign: 'center' }}
           >
             <h2 style={{ 
               fontFamily: "'Poppins', sans-serif", 
@@ -67,17 +68,18 @@ export default function AppPromoSection() {
               color: '#FFFFFF', 
               lineHeight: 1.1, 
               marginBottom: '1.5rem', 
-              letterSpacing: '-0.02em' 
+              letterSpacing: '-0.02em',
+              margin: '0 auto 1.5rem'
             }}>
               Experience our spaces,<br />
               <span style={{ color: '#D4B896', fontStyle: 'italic', fontWeight: 300 }}>in your hands.</span>
             </h2>
             
-            <p className="text-body-lg" style={{ color: 'rgba(255,255,255,0.7)', maxWidth: '500px', marginBottom: '3rem', fontSize: '16px' }}>
+            <p className="text-body-lg" style={{ color: 'rgba(255,255,255,0.7)', maxWidth: '500px', marginBottom: '3rem', fontSize: '16px', margin: '0 auto 3rem' }}>
               Test our interactive mobile prototype and explore curated designs exactly as they were meant to be felt.
             </p>
             
-            <div style={{ display: 'flex', justifyContent: 'center', maxWidth: '500px' }}>
+            <div style={{ display: 'flex', justifyContent: 'center', maxWidth: '500px', margin: '0 auto' }}>
               <Link to="/app" style={{ textDecoration: 'none' }}>
                 <motion.div
                   whileHover={{ x: 5 }}

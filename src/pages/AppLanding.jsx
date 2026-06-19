@@ -356,23 +356,23 @@ function HeroSection() {
           <h1
             style={{
               fontFamily: "'Poppins', sans-serif",
-              fontSize: 'clamp(3rem, 5.5vw, 6rem)',
-              fontWeight: 800,
+              fontSize: 'clamp(2.5rem, 5vw, 5.5rem)',
+              fontWeight: 500,
               color: '#FFFFFF',
-              lineHeight: 1.05,
+              lineHeight: 1.1,
               marginBottom: 24,
-              letterSpacing: '-0.03em',
+              letterSpacing: '-0.02em',
             }}
           >
-            Design Your{'\n'}
-            <span style={{ display: 'block' }}>Dream Space.</span>
+            Design your{'\n'}
+            <span style={{ display: 'block', color: '#D4B896', fontStyle: 'italic', fontWeight: 300 }}>dream space.</span>
           </h1>
           <p
             style={{
               fontFamily: "'Poppins', sans-serif",
-              fontSize: 'clamp(15px, 1.2vw, 20px)',
+              fontSize: 'clamp(15px, 1.2vw, 18px)',
               fontWeight: 300,
-              color: 'rgba(255,255,255,0.5)',
+              color: 'rgba(255,255,255,0.7)',
               lineHeight: 1.7,
               maxWidth: 480,
               marginBottom: 40,
