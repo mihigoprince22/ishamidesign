@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import AppPromoSection from '../components/AppPromoSection.jsx';
 
 const easing = [0.45, 0.02, 0.09, 0.98];
 
@@ -403,6 +404,11 @@ export default function Home() {
           color: inherit !important;
         }
       `}</style>
+
+      {/* ═══════════════════════════════════════
+          APP PROMO SECTION
+      ═══════════════════════════════════════ */}
+      <AppPromoSection />
     </motion.div>
   );
 }

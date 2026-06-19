@@ -60,8 +60,8 @@ export default function Footer() {
         {/* ─── Divider ─── */}
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', marginBottom: '3rem' }} />
 
-        {/* ─── Three-column grid ─── */}
-        <div className="footer-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '3rem' }}>
+        {/* ─── Four-column grid ─── */}
+        <div className="footer-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '3rem' }}>
           {/* LEFT — About */}
           <div>
             <p className="text-label" style={{ color: '#D4B896', marginBottom: '1.25rem', fontSize: '11px', fontWeight: 600, letterSpacing: '0.08em' }}>
@@ -115,6 +115,43 @@ export default function Footer() {
               </a>
               <p style={{ margin: 0 }}>Kibagabaga, Gasabo, Kigali</p>
             </div>
+          </div>
+
+          {/* RIGHT-MOST — App Prototype CTA */}
+          <div>
+            <p className="text-label" style={{ color: '#D4B896', marginBottom: '1.25rem', fontSize: '11px', fontWeight: 600, letterSpacing: '0.08em' }}>
+              Interactive Prototype
+            </p>
+            <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '14px', lineHeight: 1.6, marginBottom: '1.5rem', maxWidth: '280px' }}>
+              Test drive our digital mobile experience directly in your browser.
+            </p>
+            <Link
+              to="/app-demo"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                backgroundColor: '#D4B896',
+                color: '#1A3C34',
+                padding: '10px 20px',
+                borderRadius: '8px',
+                fontSize: '13px',
+                fontWeight: 600,
+                textDecoration: 'none',
+                transition: 'all 0.3s ease',
+                boxShadow: '0 0 15px rgba(212,184,150,0.3)',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#FFFFFF';
+                e.currentTarget.style.boxShadow = '0 0 25px rgba(255,255,255,0.4)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = '#D4B896';
+                e.currentTarget.style.boxShadow = '0 0 15px rgba(212,184,150,0.3)';
+              }}
+            >
+              Launch App Demo
+            </Link>
           </div>
         </div>
 
