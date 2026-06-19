@@ -60,24 +60,50 @@ export default function AppPromoSection() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1] }}
           >
-            <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white leading-[1.05] tracking-tight mb-6">
-              Experience Our Spaces, <br className="hidden md:block" />
-              <span className="text-[#D4B896]">In Your Hands.</span>
+            <h2 style={{ 
+              fontFamily: "'Poppins', sans-serif", 
+              fontSize: 'clamp(2.5rem, 4vw, 4rem)', 
+              fontWeight: 500, 
+              color: '#FFFFFF', 
+              lineHeight: 1.1, 
+              marginBottom: '1.5rem', 
+              letterSpacing: '-0.02em' 
+            }}>
+              Experience our spaces,<br />
+              <span style={{ color: '#D4B896', fontStyle: 'italic', fontWeight: 300 }}>in your hands.</span>
             </h2>
-            <p className="text-lg md:text-xl text-white/70 max-w-[500px] mb-12 font-light leading-relaxed">
-              Step into the future of Ishami's digital experience. Test our interactive mobile prototype and explore curated designs exactly as they were meant to be felt.
+            
+            <p className="text-body-lg" style={{ color: 'rgba(255,255,255,0.7)', maxWidth: '500px', marginBottom: '3rem', fontSize: '16px' }}>
+              Test our interactive mobile prototype and explore curated designs exactly as they were meant to be felt.
             </p>
             
-            <Link to="/app">
-              <motion.button
-                whileHover={{ scale: 1.02, boxShadow: '0 0 30px rgba(212,184,150,0.4)' }}
-                whileTap={{ scale: 0.98 }}
-                className="bg-[#D4B896] text-[#0D2620] px-8 py-4 rounded-full font-semibold text-sm md:text-base tracking-wide uppercase transition-all duration-300 shadow-[0_0_20px_rgba(212,184,150,0.2)]"
-                style={{ fontFamily: "'Poppins', sans-serif" }}
-              >
-                Launch Interactive Prototype
-              </motion.button>
-            </Link>
+            <div style={{ display: 'flex', justifyContent: 'center', maxWidth: '500px' }}>
+              <Link to="/app" style={{ textDecoration: 'none' }}>
+                <motion.div
+                  whileHover={{ x: 5 }}
+                  style={{ 
+                    display: 'inline-flex', 
+                    alignItems: 'center', 
+                    gap: '12px', 
+                    color: '#D4B896', 
+                    textTransform: 'uppercase', 
+                    fontSize: '12px', 
+                    fontWeight: 600, 
+                    letterSpacing: '0.1em', 
+                    borderBottom: '1px solid rgba(212,184,150,0.4)', 
+                    paddingBottom: '6px',
+                    transition: 'border-color 0.3s'
+                  }}
+                  onMouseEnter={(e) => e.currentTarget.style.borderBottomColor = '#D4B896'}
+                  onMouseLeave={(e) => e.currentTarget.style.borderBottomColor = 'rgba(212,184,150,0.4)'}
+                >
+                  Launch Prototype
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </motion.div>
+              </Link>
+            </div>
           </motion.div>
 
           {/* Right Side: Floating Mockup */}
