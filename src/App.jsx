@@ -9,6 +9,7 @@ import Portfolio from './pages/Portfolio.jsx';
 import Contact from './pages/Contact.jsx';
 import NotFound from './pages/NotFound.jsx';
 import AppLanding from './pages/AppLanding.jsx';
+import Sandbox from './pages/Sandbox.jsx';
 
 function App() {
   const location = useLocation();
@@ -18,6 +19,8 @@ function App() {
       <ScrollToTop />
       {location.pathname === '/app' ? (
         <AppLanding />
+      ) : location.pathname === '/app-demo' ? (
+        <Sandbox />
       ) : (
         <>
           <Header />

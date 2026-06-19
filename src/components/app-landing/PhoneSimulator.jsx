@@ -158,7 +158,7 @@ const HomeFeed = ({ onProjectClick }) => {
         fontFamily: 'Poppins, sans-serif',
       }}
     >
-      <div style={{ flex: 1, overflowY: 'auto', padding: '0 14px 10px' }}>
+      <div className="no-scrollbars" style={{ flex: 1, overflowY: 'auto', padding: '0 14px 10px' }}>
         {/* header */}
         <div
           style={{
@@ -339,7 +339,7 @@ const ProjectDetail = ({ project, onBack, onBook }) => (
       fontFamily: 'Poppins, sans-serif',
     }}
   >
-    <div style={{ flex: 1, overflowY: 'auto' }}>
+    <div className="no-scrollbars" style={{ flex: 1, overflowY: 'auto' }}>
       {/* hero image */}
       <div style={{ height: 180, background: project.gradient, position: 'relative' }}>
         <motion.div
@@ -505,7 +505,7 @@ const BookingScreen = ({ onBack }) => {
         fontFamily: 'Poppins, sans-serif',
       }}
     >
-      <div style={{ flex: 1, overflowY: 'auto', padding: '0 14px 10px' }}>
+      <div className="no-scrollbars" style={{ flex: 1, overflowY: 'auto', padding: '0 14px 10px' }}>
         {/* header */}
         <div
           style={{

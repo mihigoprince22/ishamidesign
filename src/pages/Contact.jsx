@@ -150,7 +150,7 @@ export default function Contact() {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
                   {/* Floating icon */}
                   <motion.span
-                    animate={{ y: [0, -6, 0] }}
+                    animate={{ y: [0, -5, 0] }}
                     transition={{ repeat: Infinity, duration: 3 + i * 0.5, ease: 'easeInOut' }}
                     style={{ fontSize: '16px', display: 'inline-block' }}
                   >
@@ -267,9 +267,9 @@ export default function Contact() {
                 </div>
 
                 {[
-                  { name: 'name', label: 'Your Name', type: 'text', placeholder: 'Full Name', required: true },
-                  { name: 'email', label: 'Email Address', type: 'email', placeholder: 'email@example.com', required: true },
-                  { name: 'phone', label: 'Phone Number', type: 'tel', placeholder: '+250 ...', required: false },
+                  { name: 'name', label: 'Your Name', type: 'text', required: true },
+                  { name: 'email', label: 'Email Address', type: 'email', required: true },
+                  { name: 'phone', label: 'Phone Number', type: 'tel', required: false },
                 ].map((field, i) => (
                   <motion.div
                     key={field.name}
@@ -277,19 +277,24 @@ export default function Contact() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: i * 0.08, ease: easing }}
-                    style={{ marginBottom: '2rem' }}
+                    className="relative z-0 w-full mb-8 group"
                   >
-                    <label htmlFor={field.name} className="contact-label">{field.label}</label>
                     <input
                       id={field.name}
                       name={field.name}
                       type={field.type}
-                      placeholder={field.placeholder}
+                      placeholder=" "
                       required={field.required}
                       value={formData[field.name]}
                       onChange={handleChange}
-                      className="contact-input"
+                      className="block py-2.5 px-0 w-full text-base text-gray-900 bg-transparent border-0 border-b border-gray-400 appearance-none focus:outline-none focus:ring-0 focus:border-[#1A3C34] peer"
                     />
+                    <label
+                      htmlFor={field.name}
+                      className="peer-focus:font-medium absolute text-xs text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#1A3C34] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 uppercase tracking-wider"
+                    >
+                      {field.label}
+                    </label>
                   </motion.div>
                 ))}
 
@@ -298,13 +303,24 @@ export default function Contact() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.24, ease: easing }}
-                  style={{ marginBottom: '2rem' }}
+                  className="relative z-0 w-full mb-8 group"
                 >
-                  <label htmlFor="type" className="contact-label">Project Type</label>
-                  <select id="type" name="type" value={formData.type} onChange={handleChange} className="contact-input" style={{ cursor: 'pointer' }}>
-                    <option value="">Select a type...</option>
+                  <select
+                    id="type"
+                    name="type"
+                    value={formData.type}
+                    onChange={handleChange}
+                    className="block py-2.5 px-0 w-full text-base text-gray-900 bg-transparent border-0 border-b border-gray-400 appearance-none focus:outline-none focus:ring-0 focus:border-[#1A3C34] peer cursor-pointer"
+                  >
+                    <option value="" disabled hidden></option>
                     {projectTypes.map((t) => <option key={t} value={t}>{t}</option>)}
                   </select>
+                  <label
+                    htmlFor="type"
+                    className={`absolute text-xs text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] uppercase tracking-wider ${formData.type ? 'scale-75 -translate-y-6' : 'scale-100 translate-y-0'} peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:text-[#1A3C34]`}
+                  >
+                    Project Type
+                  </label>
                 </motion.div>
 
                 <motion.div
@@ -312,19 +328,23 @@ export default function Contact() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.32, ease: easing }}
-                  style={{ marginBottom: '2.5rem' }}
+                  className="relative z-0 w-full mb-10 group"
                 >
-                  <label htmlFor="message" className="contact-label">Message</label>
                   <textarea
                     id="message"
                     name="message"
-                    placeholder="Tell us about your project, budget, timeline..."
+                    placeholder=" "
                     rows={5}
                     value={formData.message}
                     onChange={handleChange}
-                    className="contact-input"
-                    style={{ resize: 'vertical', minHeight: '120px' }}
+                    className="block py-2.5 px-0 w-full text-base text-gray-900 bg-transparent border-0 border-b border-gray-400 appearance-none focus:outline-none focus:ring-0 focus:border-[#1A3C34] peer resize-y min-h-[120px]"
                   />
+                  <label
+                    htmlFor="message"
+                    className="peer-focus:font-medium absolute text-xs text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#1A3C34] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 uppercase tracking-wider"
+                  >
+                    Message (Tell us about your project...)
+                  </label>
                 </motion.div>
 
                 <motion.button
@@ -395,37 +415,10 @@ export default function Contact() {
           padding: 2.5rem 2rem;
           border-radius: 16px;
         }
-        .contact-label {
-          font-family: 'Poppins', sans-serif;
-          font-weight: 400;
-          font-size: 11px;
-          text-transform: uppercase;
-          letter-spacing: 0.08em;
-          color: #999;
-          display: block;
-          margin-bottom: 0.5rem;
-        }
-        .contact-input {
-          width: 100%;
-          font-family: 'Poppins', sans-serif;
-          font-weight: 300;
-          font-size: 16px;
-          color: #1A1A1A;
-          padding: 0.85rem 0;
-          border: none;
-          border-bottom: 1.5px solid rgba(0,0,0,0.15);
-          background: transparent;
-          outline: none;
-          transition: border-color 0.35s ease;
-          -webkit-appearance: none;
-          border-radius: 0;
-        }
-        .contact-input:focus {
-          border-bottom-color: #1A3C34;
-        }
-        .contact-input::placeholder {
-          color: #bbb;
-          font-weight: 300;
+        .contact-form-wrapper {
+          background: #FAF8F5;
+          padding: 2.5rem 2rem;
+          border-radius: 16px;
         }
 
         @media (min-width: 768px) {

@@ -38,11 +38,11 @@ export default function About() {
           justifyContent: 'center',
         }}
       >
-        <motion.div style={{ position: 'absolute', inset: 0, y: heroY }}>
+        <motion.div style={{ position: 'absolute', inset: 0, y: heroY }} className="w-full h-full overflow-hidden">
           <img
             src="/images/gallery/dining-bright.png"
             alt="Ishami Interior"
-            style={{ width: '100%', height: '120%', objectFit: 'cover', objectPosition: 'center' }}
+            className="w-full h-full object-cover object-center"
           />
         </motion.div>
 
@@ -97,9 +97,9 @@ export default function About() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1.2, ease: [0.19, 1, 0.22, 1] }}
-                style={{ width: '100%', height: '100%' }}
+                className="w-full h-full"
               >
-                <img src="/images/about-studio.png" alt="Ishami Studio" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                <img src="/images/about-studio.png" alt="Ishami Studio" className="w-full h-full object-cover block" />
               </motion.div>
             </div>
           </div>
@@ -203,11 +203,11 @@ export default function About() {
               className="client-card"
             >
               {/* STRICT height-constrained image container */}
-              <div className="client-img-box">
+              <div className="h-[40vh] md:h-[55vh] w-full overflow-hidden rounded-xl">
                 <img
                   src={client.img}
                   alt={client.name}
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', borderRadius: '12px' }}
+                  className="w-full h-full object-cover block"
                   draggable={false}
                 />
               </div>
@@ -232,21 +232,11 @@ export default function About() {
           min-width: clamp(220px, 26vw, 320px);
           flex-shrink: 0;
         }
-        .client-img-box {
-          height: 30vh;
-          max-height: 280px;
-          overflow: hidden;
-          border-radius: 12px;
-        }
 
         @media (min-width: 768px) {
           .about-hero { height: 80vh; }
           .sticky-image-wrap { height: 60vh; }
           .about-story-text { padding: 4rem 3rem; }
-          .client-img-box {
-            height: 40vh;
-            max-height: 380px;
-          }
         }
 
         @media (min-width: 1024px) {
@@ -254,10 +244,6 @@ export default function About() {
           .about-story-grid { grid-template-columns: 55% 45% !important; }
           .sticky-image-wrap { position: sticky; top: 0; height: 100vh; }
           .about-story-text { padding: 5rem 4rem; }
-          .client-img-box {
-            height: 500px;
-            max-height: 500px;
-          }
         }
       `}</style>
     </motion.div>
