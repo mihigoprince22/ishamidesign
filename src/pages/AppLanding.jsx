@@ -446,14 +446,15 @@ function FeaturesSection() {
           <h2
             style={{
               fontFamily: "'Poppins', sans-serif",
-              fontSize: 'clamp(2rem, 4vw, 3.5rem)',
-              fontWeight: 700,
+              fontSize: 'clamp(2.5rem, 4vw, 4rem)',
+              fontWeight: 500,
               color: '#1A1A1A',
               letterSpacing: '-0.02em',
               lineHeight: 1.1,
             }}
           >
-            Everything You Need
+            Everything you{'\n'}
+            <span style={{ display: 'block', color: '#1A3C34', fontStyle: 'italic', fontWeight: 300 }}>need.</span>
           </h2>
         </motion.div>
 
@@ -502,15 +503,16 @@ function DemoSection() {
           <h2
             style={{
               fontFamily: "'Poppins', sans-serif",
-              fontSize: 'clamp(2rem, 4vw, 3.5rem)',
-              fontWeight: 700,
+              fontSize: 'clamp(2.5rem, 4vw, 4rem)',
+              fontWeight: 500,
               color: '#FFFFFF',
               letterSpacing: '-0.02em',
               lineHeight: 1.1,
               marginBottom: 16,
             }}
           >
-            Try It Yourself
+            Try it{'\n'}
+            <span style={{ display: 'block', color: '#D4B896', fontStyle: 'italic', fontWeight: 300 }}>yourself.</span>
           </h2>
           <p
             style={{
@@ -571,15 +573,16 @@ function DownloadCTA() {
           <h2
             style={{
               fontFamily: "'Poppins', sans-serif",
-              fontSize: 'clamp(2rem, 5vw, 4rem)',
-              fontWeight: 800,
+              fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
+              fontWeight: 500,
               color: '#FFFFFF',
-              letterSpacing: '-0.03em',
+              letterSpacing: '-0.02em',
               lineHeight: 1.1,
               marginBottom: 32,
             }}
           >
-            Ready to Transform<br />Your Space?
+            Ready to transform<br />
+            <span style={{ display: 'block', color: '#D4B896', fontStyle: 'italic', fontWeight: 300 }}>your space?</span>
           </h2>
           <p
             style={{
