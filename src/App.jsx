@@ -8,6 +8,7 @@ import About from './pages/About.jsx';
 import Portfolio from './pages/Portfolio.jsx';
 import Contact from './pages/Contact.jsx';
 import NotFound from './pages/NotFound.jsx';
+import AppLanding from './pages/AppLanding.jsx';
 
 function App() {
   const location = useLocation();
@@ -15,19 +16,25 @@ function App() {
   return (
     <div className="flex flex-col min-h-screen" style={{ background: '#FFFFFF', overflowX: 'hidden' }}>
       <ScrollToTop />
-      <Header />
-      <main className="flex-1">
-        <AnimatePresence mode="wait">
-          <Routes location={location} key={location.pathname}>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </AnimatePresence>
-      </main>
-      <Footer />
+      {location.pathname === '/app' ? (
+        <AppLanding />
+      ) : (
+        <>
+          <Header />
+          <main className="flex-1">
+            <AnimatePresence mode="wait">
+              <Routes location={location} key={location.pathname}>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/portfolio" element={<Portfolio />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </AnimatePresence>
+          </main>
+          <Footer />
+        </>
+      )}
     </div>
   );
 }
